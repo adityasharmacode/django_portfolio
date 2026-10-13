@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects | My Portfolio</title>
+</head>
+<body>
+    <h1>My Projects</h1>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <strong>{{ project.title }}</strong><br>
+                {{ project.description }}<br>
+                <a href="{{ project.link }}" target="_blank">View Project</a>
+            </li>
+        {% empty %}
+            <li>No projects added yet.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
